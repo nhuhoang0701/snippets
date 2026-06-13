@@ -104,7 +104,9 @@ What's happening:
 - Both `D1` and `D2` are themselves empty as complete objects (sizeof == 1), but as base subobjects of `D`, the same-type `Empty` constraint forces real storage.
 
 This is the key nuance: **EBO can eliminate the size of an empty base, but it cannot violate the distinct-address rule for same-type subobjects.** That rule is absolute, and it's what prevents full optimization in this diamond-like case.
+
 ---
+
 # Question 2: Why is the distinct-address rule for same-type subobjects but not distinct-type subobjects?
 
 # Answer
